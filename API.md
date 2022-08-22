@@ -2,37 +2,37 @@
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
 
-### EthereumNodeNetwork <a name="EthereumNodeNetwork" id="@cdklabs/cdk-ethereum-node.EthereumNodeNetwork"></a>
+### EthereumNode <a name="EthereumNode" id="@cdklabs/cdk-ethereum-node.EthereumNode"></a>
 
-#### Initializers <a name="Initializers" id="@cdklabs/cdk-ethereum-node.EthereumNodeNetwork.Initializer"></a>
+#### Initializers <a name="Initializers" id="@cdklabs/cdk-ethereum-node.EthereumNode.Initializer"></a>
 
 ```typescript
-import { EthereumNodeNetwork } from '@cdklabs/cdk-ethereum-node'
+import { EthereumNode } from '@cdklabs/cdk-ethereum-node'
 
-new EthereumNodeNetwork(scope: Construct, id: string, props?: EthereumNodeProps)
+new EthereumNode(scope: Construct, id: string, props?: EthereumNodeProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdklabs/cdk-ethereum-node.EthereumNodeNetwork.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ethereum-node.EthereumNodeNetwork.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ethereum-node.EthereumNodeNetwork.Initializer.parameter.props">props</a></code> | <code><a href="#@cdklabs/cdk-ethereum-node.EthereumNodeProps">EthereumNodeProps</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ethereum-node.EthereumNode.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ethereum-node.EthereumNode.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ethereum-node.EthereumNode.Initializer.parameter.props">props</a></code> | <code><a href="#@cdklabs/cdk-ethereum-node.EthereumNodeProps">EthereumNodeProps</a></code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="@cdklabs/cdk-ethereum-node.EthereumNodeNetwork.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="@cdklabs/cdk-ethereum-node.EthereumNode.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="@cdklabs/cdk-ethereum-node.EthereumNodeNetwork.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="@cdklabs/cdk-ethereum-node.EthereumNode.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Optional</sup> <a name="props" id="@cdklabs/cdk-ethereum-node.EthereumNodeNetwork.Initializer.parameter.props"></a>
+##### `props`<sup>Optional</sup> <a name="props" id="@cdklabs/cdk-ethereum-node.EthereumNode.Initializer.parameter.props"></a>
 
 - *Type:* <a href="#@cdklabs/cdk-ethereum-node.EthereumNodeProps">EthereumNodeProps</a>
 
@@ -42,11 +42,11 @@ new EthereumNodeNetwork(scope: Construct, id: string, props?: EthereumNodeProps)
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@cdklabs/cdk-ethereum-node.EthereumNodeNetwork.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ethereum-node.EthereumNode.toString">toString</a></code> | Returns a string representation of this construct. |
 
 ---
 
-##### `toString` <a name="toString" id="@cdklabs/cdk-ethereum-node.EthereumNodeNetwork.toString"></a>
+##### `toString` <a name="toString" id="@cdklabs/cdk-ethereum-node.EthereumNode.toString"></a>
 
 ```typescript
 public toString(): string
@@ -58,21 +58,21 @@ Returns a string representation of this construct.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@cdklabs/cdk-ethereum-node.EthereumNodeNetwork.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@cdklabs/cdk-ethereum-node.EthereumNode.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ethereum-node.EthereumNodeNetwork.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ethereum-node.EthereumNode.isConstruct"></a>
 
 ```typescript
-import { EthereumNodeNetwork } from '@cdklabs/cdk-ethereum-node'
+import { EthereumNode } from '@cdklabs/cdk-ethereum-node'
 
-EthereumNodeNetwork.isConstruct(x: any)
+EthereumNode.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ethereum-node.EthereumNodeNetwork.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ethereum-node.EthereumNode.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -84,14 +84,14 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdklabs/cdk-ethereum-node.EthereumNodeNetwork.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#@cdklabs/cdk-ethereum-node.EthereumNodeNetwork.property.availabilityZone">availabilityZone</a></code> | <code>string</code> | The Availability Zone in which the node exists. |
-| <code><a href="#@cdklabs/cdk-ethereum-node.EthereumNodeNetwork.property.instanceType">instanceType</a></code> | <code>string</code> | The Amazon Managed Blockchain instance type for the node. |
-| <code><a href="#@cdklabs/cdk-ethereum-node.EthereumNodeNetwork.property.networkId">networkId</a></code> | <code>string</code> | Managed Blockchain Ethereum network identifier. |
+| <code><a href="#@cdklabs/cdk-ethereum-node.EthereumNode.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@cdklabs/cdk-ethereum-node.EthereumNode.property.availabilityZone">availabilityZone</a></code> | <code>string</code> | The Availability Zone in which the node exists. |
+| <code><a href="#@cdklabs/cdk-ethereum-node.EthereumNode.property.instanceType">instanceType</a></code> | <code>string</code> | The Amazon Managed Blockchain instance type for the node. |
+| <code><a href="#@cdklabs/cdk-ethereum-node.EthereumNode.property.networkId">networkId</a></code> | <code>string</code> | Managed Blockchain Ethereum network identifier. |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="@cdklabs/cdk-ethereum-node.EthereumNodeNetwork.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="@cdklabs/cdk-ethereum-node.EthereumNode.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -103,7 +103,7 @@ The tree node.
 
 ---
 
-##### `availabilityZone`<sup>Required</sup> <a name="availabilityZone" id="@cdklabs/cdk-ethereum-node.EthereumNodeNetwork.property.availabilityZone"></a>
+##### `availabilityZone`<sup>Required</sup> <a name="availabilityZone" id="@cdklabs/cdk-ethereum-node.EthereumNode.property.availabilityZone"></a>
 
 ```typescript
 public readonly availabilityZone: string;
@@ -115,7 +115,7 @@ The Availability Zone in which the node exists.
 
 ---
 
-##### `instanceType`<sup>Required</sup> <a name="instanceType" id="@cdklabs/cdk-ethereum-node.EthereumNodeNetwork.property.instanceType"></a>
+##### `instanceType`<sup>Required</sup> <a name="instanceType" id="@cdklabs/cdk-ethereum-node.EthereumNode.property.instanceType"></a>
 
 ```typescript
 public readonly instanceType: string;
@@ -127,7 +127,7 @@ The Amazon Managed Blockchain instance type for the node.
 
 ---
 
-##### `networkId`<sup>Required</sup> <a name="networkId" id="@cdklabs/cdk-ethereum-node.EthereumNodeNetwork.property.networkId"></a>
+##### `networkId`<sup>Required</sup> <a name="networkId" id="@cdklabs/cdk-ethereum-node.EthereumNode.property.networkId"></a>
 
 ```typescript
 public readonly networkId: string;

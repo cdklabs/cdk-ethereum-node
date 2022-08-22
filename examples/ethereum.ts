@@ -3,7 +3,7 @@
 
 import { Stack, StackProps } from 'aws-cdk-lib'
 import { Construct } from 'constructs'
-import { EthereumNodeNetwork } from '../src/node'
+import { EthereumNode } from '../src/node'
 import { NetworkId, InstanceType } from '../src/utilities'
 
 
@@ -17,12 +17,12 @@ export class EthereumCdkStack extends Stack {
          * Availability Zone - 'us-east-1a'
          * Instance Type - 'bc.t3.large'
          */
-        new EthereumNodeNetwork(this, 'EthereumDefault')
+        new EthereumNode(this, 'EthereumDefault')
 
     /**
      * Custom network configurations for Ethereum node delpoyments
      */
-    new EthereumNodeNetwork(this, 'EthereumCustom', {
+    new EthereumNode(this, 'EthereumCustom', {
       networkId: NetworkId.MAINNET,
       availabilityZone: 'us-east-1b',
       instanceType: InstanceType.BURSTABLE3_LARGE

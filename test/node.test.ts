@@ -16,7 +16,7 @@ describe('ethereum-node', () => {
   test('Create a network with the default node configuration', () => {
     const app = new cdk.App();
     const stack = new cdk.Stack(app, 'TestStack', DEFAULT_ENV);
-    const network = new ethereum.EthereumNodeNetwork(stack, 'TestEthereumPublicNetwork', {});
+    const network = new ethereum.EthereumNode(stack, 'TestEthereumPublicNetwork', {});
     const template = assertions.Template.fromStack(stack);
     template.resourceCountIs('AWS::ManagedBlockchain::Node', 1);
     template.hasResource('AWS::ManagedBlockchain::Node', {
@@ -39,7 +39,7 @@ describe('ethereum-node', () => {
   test('Create a network with a custom node configuration', () => {
     const app = new cdk.App();
     const stack = new cdk.Stack(app, 'TestStack', DEFAULT_ENV);
-    const network = new ethereum.EthereumNodeNetwork(stack, 'TestEthereumPublicNetwork', {
+    const network = new ethereum.EthereumNode(stack, 'TestEthereumPublicNetwork', {
       networkId: utilities.NetworkId.MAINNET,
       availabilityZone: 'us-east-1b',
       instanceType: utilities.InstanceType.BURSTABLE3_LARGE,
@@ -68,13 +68,13 @@ describe('ethereum-node', () => {
     const mismatchedAvailabilityZone = () => {
       const app = new cdk.App();
       const stack = new cdk.Stack(app, 'TestStack', DEFAULT_ENV);
-      new ethereum.EthereumNodeNetwork(stack, 'TestEthereumNode', { availabilityZone: 'us-west-1a' });
+      new ethereum.EthereumNode(stack, 'TestEthereumNode', { availabilityZone: 'us-west-1a' });
     };
     expect(utilities.SUPPORTED_AVAILABILITY_ZONES['us-east-1']).not.toContain('us-east-1z');
     const nonexistantAvailabilityZone = () => {
       const app = new cdk.App();
       const stack = new cdk.Stack(app, 'TestStack', DEFAULT_ENV);
-      new ethereum.EthereumNodeNetwork(stack, 'TestEthereumNode', { availabilityZone: 'us-east-1z' });
+      new ethereum.EthereumNode(stack, 'TestEthereumNode', { availabilityZone: 'us-east-1z' });
     };
     expect(mismatchedAvailabilityZone).toThrow(Error);
     expect(nonexistantAvailabilityZone).toThrow(Error);
@@ -89,7 +89,7 @@ describe('ethereum-node', () => {
     const unsupportedInstanceType = () => {
       const app = new cdk.App();
       const stack = new cdk.Stack(app, 'TestStack', DEFAULT_ENV);
-      new ethereum.EthereumNodeNetwork(stack, 'TestEthereumNode', { instanceType: 'bc.t3.2xlarge' });
+      new ethereum.EthereumNode(stack, 'TestEthereumNode', { instanceType: 'bc.t3.2xlarge' });
     };
     expect(unsupportedInstanceType).toThrow(Error);
   });
@@ -104,7 +104,7 @@ describe('ethereum-node', () => {
       const app = new cdk.App();
       const unsupported_region = { env: { region: 'us-west-1' } };
       const stack = new cdk.Stack(app, 'TestStack', unsupported_region);
-      new ethereum.EthereumNodeNetwork(stack, 'TestEthereumNode');
+      new ethereum.EthereumNode(stack, 'TestEthereumNode');
     };
     expect(unsupportedRegion).toThrow(Error);
   });

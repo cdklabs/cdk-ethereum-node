@@ -33,7 +33,7 @@ export interface EthereumNodeProps {
 }
 
 
-export class EthereumNodeNetwork extends Construct {
+export class EthereumNode extends Construct {
 
   /**
      * Managed Blockchain Ethereum network identifier
