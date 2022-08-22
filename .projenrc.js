@@ -4,13 +4,14 @@
 const { awscdk } = require('projen');
 
 const project = new awscdk.AwsCdkConstructLibrary({
-  name: 'cdk-ethereum-network',
-  authorName: 'Marc Gozali, Trinity Key',
-  description: 'CDK construct to deploy an Ethereum public network running on Amazon Managed Blockchain',
+  name: '@cdklabs/cdk-ethereum-node',
+  authorName: 'Amazon Web Services',
+  authorUrl: 'https://aws.amazon.com',
+  description: 'CDK construct to deploy an Ethereum node running on Amazon Managed Blockchain',
   license: 'MIT-0',
   copyrightOwner: 'Amazon.com, Inc. or its affiliates. All Rights Reserved.',
   defaultReleaseBranch: 'main',
-  repositoryUrl: 'https://github.com/aws-samples/cdk-ethereum-network',
+  repositoryUrl: 'https://github.com/cdklabs/cdk-ethereum-node.git',
   cdkVersion: '2.33.0',
   autoApproveUpgrades: true,
   autoApproveOptions: {
@@ -29,9 +30,20 @@ const project = new awscdk.AwsCdkConstructLibrary({
     '.gitattributes',
     '.jsii',
   ],
+  npmAccess: 'public',
   publishToPypi: {
-    distName: 'cdk-ethereum-network',
-    module: 'cdk_ethereum_network',
+    distName: 'cdklabs.cdk-ethereum-node',
+    module: 'cdklabs.cdk_ethereum-node',
+  },
+  publishToMaven: {
+    javaPackage: 'io.github.cdklabs.cdkethereumnode',
+    mavenEndpoint: 'https://s01.oss.sonatype.org',
+    mavenArtifactId: 'cdk-ethereum-node',
+    mavenGroupId: 'io.github.cdklabs',
+  },
+  publishToNuget: {
+    dotNetNamespace: 'Cdklabs.CdkEthereumNode',
+    packageId: 'Cdklabs.CdkEthereumNode',
   },
   keywords: [
     'aws',
@@ -39,6 +51,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
     'blockchain',
     'cdk',
     'ethereum',
+    'ethereum-node',
     'ethereum-network',
     'managedblockchain',
     'aws::managedblockchain',

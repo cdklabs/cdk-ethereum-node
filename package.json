@@ -1,9 +1,9 @@
 {
-  "name": "cdk-ethereum-network",
-  "description": "CDK construct to deploy an Ethereum public network running on Amazon Managed Blockchain",
+  "name": "@cdklabs/cdk-ethereum-node",
+  "description": "CDK construct to deploy an Ethereum node running on Amazon Managed Blockchain",
   "repository": {
     "type": "git",
-    "url": "https://github.com/aws-samples/cdk-ethereum-network"
+    "url": "https://github.com/cdklabs/cdk-ethereum-node.git"
   },
   "scripts": {
     "build": "npx projen build",
@@ -17,6 +17,8 @@
     "eslint": "npx projen eslint",
     "package": "npx projen package",
     "package-all": "npx projen package-all",
+    "package:dotnet": "npx projen package:dotnet",
+    "package:java": "npx projen package:java",
     "package:js": "npx projen package:js",
     "package:python": "npx projen package:python",
     "post-compile": "npx projen post-compile",
@@ -32,7 +34,8 @@
     "projen": "npx projen"
   },
   "author": {
-    "name": "Marc Gozali, Trinity Key",
+    "name": "Amazon Web Services",
+    "url": "https://aws.amazon.com",
     "organization": false
   },
   "devDependencies": {
@@ -73,10 +76,14 @@
     "cdk",
     "ethereum",
     "ethereum-network",
+    "ethereum-node",
     "managedblockchain"
   ],
   "main": "lib/index.js",
   "license": "MIT-0",
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "0.0.0",
   "jest": {
     "testMatch": [
@@ -123,9 +130,20 @@
   "jsii": {
     "outdir": "dist",
     "targets": {
+      "java": {
+        "package": "io.github.cdklabs.cdkethereumnode",
+        "maven": {
+          "groupId": "io.github.cdklabs",
+          "artifactId": "cdk-ethereum-node"
+        }
+      },
       "python": {
-        "distName": "cdk-ethereum-network",
-        "module": "cdk_ethereum_network"
+        "distName": "cdklabs.cdk-ethereum-node",
+        "module": "cdklabs.cdk_ethereum-node"
+      },
+      "dotnet": {
+        "namespace": "Cdklabs.CdkEthereumNode",
+        "packageId": "Cdklabs.CdkEthereumNode"
       }
     },
     "tsc": {
