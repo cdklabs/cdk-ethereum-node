@@ -1,7 +1,7 @@
 
 <!-- TODO: FINALIZE README BEFORE JUD REVIEW-->
 <!-- TODO: CREATE SEPARATE READMES FOR CLASSES-->
-# Ethereum Network on Amazon Managed Blockchain
+# Ethereum Nodes on Amazon Managed Blockchain
 
 This repository contains an L2 CDK construct to deploy an Ethereum 
 node running on Amazon Managed Blockchain. The default configuration currently builds
@@ -89,14 +89,6 @@ class EthereumCdkStack(cdk.Stack):
         # Instance Type - 'bc.t3.large'
 
         ethereum_node = ethereum.EthereumNode(self, "MyDefaultEthereumNode")
-
-        # Custom network configurations for Ethereum node delpoyments
-        
-        custom_ethereum_node = ethereum.EthereumNode(self, "MyCustomEthereumNode",
-            network_id = ethereum.EthereumNode.NetworkId.MAINNET,
-            availability_zone = 'us-east-1a',
-            instance_type = 'bc.t3.large'
-        );
 ```
 
 The following is a more complex instantiation illustrating some of the node configuration options available.
