@@ -1,23 +1,25 @@
+# Ethereum on Amazon Managed Blockchain
 
-<!-- TODO: FINALIZE README BEFORE JUD REVIEW-->
-<!-- TODO: CREATE SEPARATE READMES FOR CLASSES-->
-# Ethereum Nodes on Amazon Managed Blockchain
+![license](https://img.shields.io/github/license/cdklabs/cdk-ethereum-node?color=green)
+![release](https://img.shields.io/github/v/release/cdklabs/cdk-ethereum-node?color=green)
+![npm:version](https://img.shields.io/npm/v/@cdklabs/cdk-ethereum-node?color=blue)
+![PyPi:version](https://img.shields.io/pypi/v/cdklabs.cdk-ethereum-node?color=blue)
+![Maven:version](https://img.shields.io/maven-central/v/io.github.cdklabs/cdk-ethereum-node?color=blue&label=maven)
+![NuGet:version](https://img.shields.io/nuget/v/Cdklabs.CdkEthereumNode?color=blue)
 
-This repository contains an L2 CDK construct to deploy an Ethereum 
-node running on Amazon Managed Blockchain. The default configuration currently builds
-out one node on the Ethereum Ropsten testnet but provides configuration options to deploy nodes to the Mainnet, Goerli, and Rinkeby testnets. The following enhanced functionality
-is planned for future releases:
+This repository contains a CDK construct to deploy an Ethereum node running
+on Amazon Managed Blockchain. The following networks are supported:
 
-*  Support for other languages (e.g. Python)
+*  Mainnet (default)
+*  Testnet: Goerli
+*  Testnet: Ropsten
+*  Testnet: Rinkeby
 
 
 ## Installation
-> Note that this construct requires [AWS CDK v2](https://docs.aws.amazon.com/cdk/v2/guide/getting_started.html#getting_started_install).
 
-The construct is available for both TypeScript and Python CDK projects.
-It can be installed with the following:
+Note that this construct requires [AWS CDK v2](https://docs.aws.amazon.com/cdk/v2/guide/getting_started.html#getting_started_install).
 
-<!-- TODO: COME BACK TO CHANGE NAME -->
 #### JavaScript
 
 ```bash
@@ -47,28 +49,22 @@ Add the following to `pom.xml`:
 dotnet add package Cdklabs.CdkEthereumNode
 ```
 
+
 ## Usage
 
-A minimally complete deployment is shown below. By default, Amazon Managed Blockchain deploys a single `bc.t3.large` node on the Ethereum Ropsten testnet. 
+A minimally complete deployment is shown below. By default,
+a `bc.t3.large` node will be created on the Ethereum Mainnet.
 
 ```typescript
 import { App, Stack, StackProps } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import { EthereumNode } from '../src/node';
-import { NetworkId, InstanceType } from '../src/utilities' 
 
-export class EthereumCdkStack extends Stack {
-    constructor(scope: Construct, id: string, props?: StackProps) {
-        super(scope, id, props);
-
-        /**
-         * Default Ethereum node deployment onto Amazon Managed Blockchain
-         * Network - Ethereum Ropsten testnet
-         * Availability Zone - 'us-east-1a'
-         * Instance Type - 'bc.t3.large'
-         */
-        new EthereumNode(this, 'EthereumDefault');
-    }
+export class MyStack extends Stack {
+  constructor(scope: Construct, id: string, props?: StackProps) {
+    super(scope, id, props);
+    new EthereumNode(this, 'Example');
+  }
 }
 
 ```
@@ -76,44 +72,36 @@ export class EthereumCdkStack extends Stack {
 The equivalent Python code is as follows:
 
 ```python
-import aws_cdk as cdk
-import cdk_ethereum_node as ethereum
+from aws_cdk import Stack
+from cdklabs.cdk_ethereum_node as EthereumNode
 
-class EthereumCdkStack(cdk.Stack):
+class MyStack(Stack):
     def __init__(self, scope, id, **kwargs):
         super().__init__(scope, id, **kwargs)
-
-        # Default Ethereum node deployment onto Amazon Managed Blockchain
-        # Network - Ethereum Ropsten
-        # Availability Zone - 'us-east-1a'
-        # Instance Type - 'bc.t3.large'
-
-        ethereum_node = ethereum.EthereumNode(self, "MyDefaultEthereumNode")
+        EthereumNode(self, 'Example')
 ```
 
 The following is a more complex instantiation illustrating some of the node configuration options available.
 
 ```typescript
-new EthereumNode(this, 'EthereumCustom', {
-        networkId: NetworkId.MAINNET,
-        availabilityZone: 'us-east-1b',
-        instanceType: InstanceType.BURSTABLE3_LARGE,
-    });
+new EthereumNode(this, 'Example', {
+  networkType: NetworkId.MAINNET,
+  availabilityZone: 'us-east-1b',
+  instanceType: InstanceType.BURSTABLE3_LARGE,
+});
 ```
-
 
 The following provides an example of how to leverage the construct to deploy more than one node at a time.
 
 ```typescript
-for (var i = 0; i < 10; i++) {
-    new EthereumNodeNetwork(this, `EthereumCustom_${i}`, {
+for (const i = 0; i < 10; i++) {
+  new EthereumNodeNetwork(this, `Example_${i}`, {
     networkId: NetworkId.MAINNET,
     availabilityZone: 'us-east-1b',
-    instanceType: InstanceType.BURSTABLE3_LARGE
-    })
+    instanceType: InstanceType.BURSTABLE3_LARGE,
+  });
 }
 ```
-
 
 See the [API Documentation](API.md) for details on all available input and output parameters.
 
@@ -121,9 +109,8 @@ See the [API Documentation](API.md) for details on all available input and outpu
 ## References
 
 *  [AWS CDK](https://docs.aws.amazon.com/cdk/v2/guide/home.html)
-*  [Amazon Managed Blockchain Ethereum Nodes](https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/ethereum-nodes.html)
+*  [Amazon Managed Blockchain](https://aws.amazon.com/managed-blockchain/)
 *  [Ethereum Documentation](https://ethereum.org/en/developers/docs/)
-*  [AWS CloudFormation Node Configuration](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-node-nodeconfiguration.html)
 
 
 ## Contributing
@@ -139,12 +126,10 @@ See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more inform
 
 ## Authors
 
-*  Marc Gozali (gozalim@amazon.com)
 *  Trinity Key (trinikey@amazon.com)
-*  Jud Neer (judneer@amazon.com)
-<!-- Special Shoutout to Roger Ramesh (rameroge@) and Evan Harrington (evharrin@)  -->
+*  Marc Gozali (gozalim@amazon.com)
 
 
-<!-- TODO: FIX -->
 ## License
+
 This project is licensed under the MIT-0 License. See the [LICENSE](LICENSE) file for details.
