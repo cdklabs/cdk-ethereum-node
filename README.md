@@ -37,7 +37,7 @@ Add the following to `pom.xml`:
 ```xml
 <dependency>
   <groupId>io.github.cdklabs</groupId>
-  <artifactId>cdk-cdk-ethereum-node</artifactId>
+  <artifactId>cdk-ethereum-node</artifactId>
 </dependency>
 ```
 
