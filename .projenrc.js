@@ -33,7 +33,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   npmAccess: 'public',
   publishToPypi: {
     distName: 'cdklabs.cdk-ethereum-node',
-    module: 'cdklabs.cdk_ethereum-node',
+    module: 'cdklabs.cdk_ethereum_node',
   },
   publishToMaven: {
     javaPackage: 'io.github.cdklabs.cdkethereumnode',
@@ -51,8 +51,6 @@ const project = new awscdk.AwsCdkConstructLibrary({
     'blockchain',
     'cdk',
     'ethereum',
-    'ethereum-node',
-    'ethereum-network',
     'managedblockchain',
     'aws::managedblockchain',
     'aws-managedblockchain',
