@@ -13,7 +13,7 @@ export class EthereumCdkStack extends Stack {
 
         /**
          * Default Ethereum node deployment onto Amazon Managed Blockchain
-         * Network - Ethereum Ropsten
+         * Network - Ethereum Mainnet
          * Availability Zone - 'us-east-1a'
          * Instance Type - 'bc.t3.large'
          */
@@ -23,7 +23,7 @@ export class EthereumCdkStack extends Stack {
      * Custom network configurations for Ethereum node delpoyments
      */
     new EthereumNode(this, 'EthereumCustom', {
-      networkId: NetworkId.MAINNET,
+      networkId: NetworkId.ROPSTEN,
       availabilityZone: 'us-east-1b',
       instanceType: InstanceType.BURSTABLE3_LARGE
         })

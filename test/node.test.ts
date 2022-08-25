@@ -27,7 +27,7 @@ describe('ethereum-node', () => {
         },
       },
     });
-    expect(network.networkId).toBe(utilities.NetworkId.ROPSTEN);
+    expect(network.networkId).toBe(utilities.NetworkId.MAINNET);
     expect(network.availabilityZone).toBe('us-east-1a');
     expect(network.instanceType).toBe(utilities.InstanceType.BURSTABLE3_LARGE);
   });

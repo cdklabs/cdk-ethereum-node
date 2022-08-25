@@ -14,7 +14,7 @@ export interface EthereumNodeProps {
 
   /**
      * The Ethereum Network in which the node will be created
-     * @default - The default network selected is ROPSTEN test network
+     * @default - The default network selected is Mainnet network
      */
   readonly networkId?: string;
 
@@ -67,7 +67,7 @@ export class EthereumNode extends Construct {
     if (typeof props === 'undefined') props = {};
     // If no node configurations are provided, create one; the empty object
     // will be populated with defaults when passed to the node constructor
-    this.networkId = props.networkId ?? utilities.NetworkId.ROPSTEN;
+    this.networkId = props.networkId ?? utilities.NetworkId.MAINNET;
     this.instanceType = props.instanceType ?? utilities.InstanceType.BURSTABLE3_LARGE;
     this.availabilityZone = props.availabilityZone ?? `${region}a`;
 

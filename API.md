@@ -197,7 +197,7 @@ public readonly networkId: string;
 ```
 
 - *Type:* string
-- *Default:* The default network selected is ROPSTEN test network
+- *Default:* The default network selected is Mainnet network
 
 The Ethereum Network in which the node will be created.
 

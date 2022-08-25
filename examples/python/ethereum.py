@@ -10,7 +10,7 @@ class EthereumCdkStack(cdk.Stack):
         super().__init__(scope, id, **kwargs)
 
         # Default Ethereum node deployment onto Amazon Managed Blockchain
-        # Network - Ethereum Ropsten
+        # Network - Ethereum Mainnet
         # Availability Zone - 'us-east-1a'
         # Instance Type - 'bc.t3.large'
 
@@ -19,7 +19,7 @@ class EthereumCdkStack(cdk.Stack):
         # Custom network configurations for Ethereum node delpoyments
         
         custom_ethereum_node = ethereum.EthereumNode(self, "MyCustomEthereumNode",
-            network_id = ethereum.EthereumNode.NetworkId.MAINNET,
+            network_id = ethereum.EthereumNode.NetworkId.ROPSTEN,
             availability_zone = 'us-east-1a',
             instance_type = 'bc.t3.large'
         );
