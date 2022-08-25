@@ -3,9 +3,7 @@
 
 import { Stack, StackProps } from 'aws-cdk-lib'
 import { Construct } from 'constructs'
-import { EthereumNode } from '../../src/node'
-import { NetworkId, InstanceType } from '../../src/utilities'
-
+import { Network, InstanceType, EthereumNode } from '../../src/node'
 
 export class EthereumCdkStack extends Stack {
   constructor (scope: Construct, id: string, props?: StackProps) {
@@ -23,7 +21,7 @@ export class EthereumCdkStack extends Stack {
      * Custom network configurations for Ethereum node delpoyments
      */
     new EthereumNode(this, 'EthereumCustom', {
-      networkId: NetworkId.ROPSTEN,
+      network: Network.ROPSTEN,
       availabilityZone: 'us-east-1b',
       instanceType: InstanceType.BURSTABLE3_LARGE
         })

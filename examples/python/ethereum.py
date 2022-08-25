@@ -19,7 +19,7 @@ class EthereumCdkStack(cdk.Stack):
         # Custom network configurations for Ethereum node delpoyments
         
         custom_ethereum_node = ethereum.EthereumNode(self, "MyCustomEthereumNode",
-            network_id = ethereum.EthereumNode.NetworkId.ROPSTEN,
+            network = ethereum.Network.ROPSTEN,
             availability_zone = 'us-east-1a',
-            instance_type = 'bc.t3.large'
+            instance_type = ethereum.InstanceType.BURSTABLE3_XLARGE
         );
