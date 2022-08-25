@@ -75,35 +75,3 @@ export function validateAvailabilityZone(region: string, availabilityZone?: stri
   }
 }
 
-/**
- * Supported Ethereum Network types for Amazon Managed Blockchain CDK deployment
- */
-export enum NetworkId {
-  MAINNET = 'n-ethereum-mainnet',
-  RINKEBY = 'n-ethereum-rinkeby',
-  ROPSTEN = 'n-ethereum-ropsten',
-}
-
-/**
-* Supported instance types for Managed Blockchain Etheruem nodes
-*/
-export enum InstanceType {
-  BURSTABLE3_LARGE = 'bc.t3.large',
-  BURSTABLE3_XLARGE = 'bc.t3.xlarge',
-  STANDARD5_LARGE = 'bc.m5.large',
-  STANDARD5_XLARGE = 'bc.m5.xlarge',
-  STANDARD5_XLARGE2 = 'bc.m5.2xlarge',
-  STANDARD5_XLARGE4 = 'bc.m5.4xlarge',
-  COMPUTE5_XLARGE = 'bc.c5.xlarge',
-  COMPUTE5_XLARGE2 = 'bc.c5.2xlarge',
-  COMPUTE5_XLARGE4 = 'bc.c5.4xlarge',
-}
-
-/**
-* Throw an error if provided instance type is not in the supported list
-*/
-export function validateInstanceType(instanceType?: string) {
-  if (typeof instanceType === 'undefined' || !(Object.values(InstanceType).includes(instanceType as InstanceType))) {
-    throw new Error(`Managed Blockchain does not support this instance type: ${instanceType}`);
-  }
-}

@@ -81,20 +81,6 @@ describe('ethereum-node', () => {
   });
 
   /**
-   * A test that validates that the CDK construct fails to deploy
-   * an Ethereum node with an invalid instance type.
-   */
-  test('Fail to create a node on network with an unsupported instance type', () => {
-    expect(ethereum.InstanceType).not.toContain('bc.t3.2xlarge');
-    const unsupportedInstanceType = () => {
-      const app = new cdk.App();
-      const stack = new cdk.Stack(app, 'TestStack', DEFAULT_ENV);
-      new ethereum.EthereumNode(stack, 'TestEthereumNode', { instanceType: 'bc.t3.2xlarge' });
-    };
-    expect(unsupportedInstanceType).toThrow(Error);
-  });
-
-  /**
    * A test that throws an error when construct given an
    * unsupported region.
    */

@@ -100,7 +100,6 @@ export class EthereumNode extends Construct {
 
     utilities.validateRegion(region);
     utilities.validateAvailabilityZone(region, this.availabilityZone);
-    utilities.validateInstanceType(this.instanceType);
 
     /**
      * Build out CloudFormation resources populating with input values or defaults if none provided
