@@ -95,7 +95,7 @@ The following provides an example of how to leverage the construct to deploy mor
 
 ```typescript
 for (const i = 0; i < 10; i++) {
-  new EthereumNodeNetwork(this, `Example_${i}`, {
+  new EthereumNode(this, `Example_${i}`, {
     networkId: NetworkId.MAINNET,
     availabilityZone: 'us-east-1b',
     instanceType: InstanceType.BURSTABLE3_LARGE,
