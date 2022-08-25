@@ -27,9 +27,9 @@ describe('ethereum-node', () => {
         },
       },
     });
-    expect(network.networkId).toBe(utilities.NetworkId.MAINNET);
+    expect(network.network).toBe(ethereum.Network.MAINNET);
     expect(network.availabilityZone).toBe('us-east-1a');
-    expect(network.instanceType).toBe(utilities.InstanceType.BURSTABLE3_LARGE);
+    expect(network.instanceType).toBe(ethereum.InstanceType.BURSTABLE3_LARGE);
   });
 
   /**
@@ -40,9 +40,9 @@ describe('ethereum-node', () => {
     const app = new cdk.App();
     const stack = new cdk.Stack(app, 'TestStack', DEFAULT_ENV);
     const network = new ethereum.EthereumNode(stack, 'TestEthereumPublicNetwork', {
-      networkId: utilities.NetworkId.MAINNET,
+      network: ethereum.Network.MAINNET,
       availabilityZone: 'us-east-1b',
-      instanceType: utilities.InstanceType.BURSTABLE3_LARGE,
+      instanceType: ethereum.InstanceType.BURSTABLE3_LARGE,
     });
     const template = assertions.Template.fromStack(stack);
     template.resourceCountIs('AWS::ManagedBlockchain::Node', 1);
@@ -54,9 +54,9 @@ describe('ethereum-node', () => {
         },
       },
     });
-    expect(network.networkId).toBe(utilities.NetworkId.MAINNET);
+    expect(network.network).toBe(ethereum.Network.MAINNET);
     expect(network.availabilityZone).toBe('us-east-1b');
-    expect(network.instanceType).toBe(utilities.InstanceType.BURSTABLE3_LARGE);
+    expect(network.instanceType).toBe(ethereum.InstanceType.BURSTABLE3_LARGE);
   });
 
   /**
@@ -85,7 +85,7 @@ describe('ethereum-node', () => {
    * an Ethereum node with an invalid instance type.
    */
   test('Fail to create a node on network with an unsupported instance type', () => {
-    expect(utilities.InstanceType).not.toContain('bc.t3.2xlarge');
+    expect(ethereum.InstanceType).not.toContain('bc.t3.2xlarge');
     const unsupportedInstanceType = () => {
       const app = new cdk.App();
       const stack = new cdk.Stack(app, 'TestStack', DEFAULT_ENV);
