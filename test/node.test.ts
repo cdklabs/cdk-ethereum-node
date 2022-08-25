@@ -16,7 +16,7 @@ describe('ethereum-node', () => {
   test('Create a network with the default node configuration', () => {
     const app = new cdk.App();
     const stack = new cdk.Stack(app, 'TestStack', DEFAULT_ENV);
-    const network = new ethereum.EthereumNode(stack, 'TestEthereumPublicNetwork', {});
+    const node = new ethereum.EthereumNode(stack, 'TestEthereumPublicNetwork', {});
     const template = assertions.Template.fromStack(stack);
     template.resourceCountIs('AWS::ManagedBlockchain::Node', 1);
     template.hasResource('AWS::ManagedBlockchain::Node', {
@@ -27,19 +27,19 @@ describe('ethereum-node', () => {
         },
       },
     });
-    expect(network.network).toBe(ethereum.Network.MAINNET);
-    expect(network.availabilityZone).toBe('us-east-1a');
-    expect(network.instanceType).toBe(ethereum.InstanceType.BURSTABLE3_LARGE);
+    expect(node.network).toBe(ethereum.Network.MAINNET);
+    expect(node.availabilityZone).toBe('us-east-1a');
+    expect(node.instanceType).toBe(ethereum.InstanceType.BURSTABLE3_LARGE);
   });
 
   /**
    * A test that validates that the CDK construct deploys an
    * Ethereum node with custom configuration.
    */
-  test('Create a network with a custom node configuration', () => {
+  test('Create an Ethereum node with custom configuration', () => {
     const app = new cdk.App();
     const stack = new cdk.Stack(app, 'TestStack', DEFAULT_ENV);
-    const network = new ethereum.EthereumNode(stack, 'TestEthereumPublicNetwork', {
+    const node = new ethereum.EthereumNode(stack, 'TestEthereumPublicNetwork', {
       network: ethereum.Network.MAINNET,
       availabilityZone: 'us-east-1b',
       instanceType: ethereum.InstanceType.BURSTABLE3_LARGE,
@@ -54,9 +54,9 @@ describe('ethereum-node', () => {
         },
       },
     });
-    expect(network.network).toBe(ethereum.Network.MAINNET);
-    expect(network.availabilityZone).toBe('us-east-1b');
-    expect(network.instanceType).toBe(ethereum.InstanceType.BURSTABLE3_LARGE);
+    expect(node.network).toBe(ethereum.Network.MAINNET);
+    expect(node.availabilityZone).toBe('us-east-1b');
+    expect(node.instanceType).toBe(ethereum.InstanceType.BURSTABLE3_LARGE);
   });
 
   /**
