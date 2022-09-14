@@ -3,9 +3,9 @@
 
 import * as cdk from 'aws-cdk-lib';
 import * as managedblockchain from 'aws-cdk-lib/aws-managedblockchain';
-import { Construct } from 'constructs';
-import * as utilities from './utilities';
+import * as constructs from 'constructs';
 
+import * as utilities from './utilities';
 
 /**
  * Supported instance types for Managed Blockchain nodes
@@ -60,7 +60,7 @@ export interface EthereumNodeProps {
 }
 
 
-export class EthereumNode extends Construct {
+export class EthereumNode extends constructs.Construct {
 
   /**
      * Managed Blockchain Ethereum network identifier
@@ -80,7 +80,7 @@ export class EthereumNode extends Construct {
   /**
    * Creates an Ethereum public network node on an Amazon Managed Blockchain network
   */
-  constructor(scope: Construct, id: string, props?: EthereumNodeProps) {
+  constructor(scope: constructs.Construct, id: string, props?: EthereumNodeProps) {
 
     super(scope, id);
 

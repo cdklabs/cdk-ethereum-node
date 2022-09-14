@@ -15,7 +15,7 @@ export const SUPPORTED_REGIONS = [
 ];
 
 /**
- * Map of supported regions to their availabilty zones
+ * Map of supported regions to their availability zones
  */
 export const SUPPORTED_AVAILABILITY_ZONES: Record<string, Array<string>> = {
   'ap-northeast-1': [
@@ -55,7 +55,7 @@ export const SUPPORTED_AVAILABILITY_ZONES: Record<string, Array<string>> = {
 };
 
 /**
- * Method that throws an error if provided region is not in the supported list
+ * Throw an error if provided region is not in the supported list
  */
 export function validateRegion(region: string) {
   if (!SUPPORTED_REGIONS.includes(region)) {
@@ -65,7 +65,7 @@ export function validateRegion(region: string) {
 }
 
 /**
- * Method that throws an error if provided availability zone is not in the supported list
+ * Throw an error if provided availability zone is not in the supported list
  */
 export function validateAvailabilityZone(region: string, availabilityZone?: string) {
   const availabililtyZonesForRegion = SUPPORTED_AVAILABILITY_ZONES[region];
@@ -74,4 +74,3 @@ export function validateAvailabilityZone(region: string, availabilityZone?: stri
     throw new Error(`Managed Blockchain in ${region} is only available in the following availability zones: ${availabilityZoneList}.`);
   }
 }
-

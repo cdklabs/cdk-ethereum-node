@@ -57,9 +57,9 @@ A minimally complete deployment is shown below. By default,
 a `bc.t3.large` node will be created on the Ethereum Mainnet.
 
 ```typescript
-import { App, Stack, StackProps } from 'aws-cdk-lib';
+import { Stack, StackProps } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
-import { EthereumNode } from '../src/node';
+import { EthereumNode } from '@cdklabs/cdk-ethereum-node';
 
 export class MyStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
@@ -74,7 +74,7 @@ The equivalent Python code is as follows:
 
 ```python
 from aws_cdk import Stack
-from cdklabs.cdk_ethereum_node as EthereumNode
+from cdklabs.cdk_ethereum_node import EthereumNode
 
 class MyStack(Stack):
     def __init__(self, scope, id, **kwargs):
@@ -86,7 +86,7 @@ The following is a more complex instantiation illustrating some of the node conf
 
 ```typescript
 new EthereumNode(this, 'Example', {
-  networkType: NetworkId.MAINNET,
+  networkType: NetworkId.ROPSTEN,
   availabilityZone: 'us-east-1b',
   instanceType: InstanceType.BURSTABLE3_LARGE,
 });
@@ -96,11 +96,7 @@ The following provides an example of how to leverage the construct to deploy mor
 
 ```typescript
 for (const i = 0; i < 10; i++) {
-  new EthereumNode(this, `Example_${i}`, {
-    network: Network.MAINNET,
-    availabilityZone: 'us-east-1b',
-    instanceType: InstanceType.BURSTABLE3_LARGE,
-  });
+  new EthereumNode(this, `Example_${i}`);
 }
 ```
 
@@ -111,7 +107,7 @@ See the [API Documentation](API.md) for details on all available input and outpu
 
 *  [AWS CDK](https://docs.aws.amazon.com/cdk/v2/guide/home.html)
 *  [Amazon Managed Blockchain](https://aws.amazon.com/managed-blockchain/)
-*  [Ethereum Documentation](https://ethereum.org/en/developers/docs/)
+*  [Ethereum](https://ethereum.org/en/developers/docs/)
 
 
 ## Contributing
