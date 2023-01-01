@@ -1,11 +1,12 @@
 # Ethereum on Amazon Managed Blockchain
 
-![license](https://img.shields.io/github/license/cdklabs/cdk-ethereum-node?color=green)
-![release](https://img.shields.io/github/v/release/cdklabs/cdk-ethereum-node?color=green)
-![npm:version](https://img.shields.io/npm/v/@cdklabs/cdk-ethereum-node?color=blue)
-![PyPi:version](https://img.shields.io/pypi/v/cdklabs.cdk-ethereum-node?color=blue)
-![Maven:version](https://img.shields.io/maven-central/v/io.github.cdklabs/cdk-ethereum-node?color=blue&label=maven)
-![NuGet:version](https://img.shields.io/nuget/v/Cdklabs.CdkEthereumNode?color=blue)
+[![license](https://img.shields.io/github/license/cdklabs/cdk-ethereum-node?color=green)](https://opensource.org/licenses/MIT)
+[![release](https://img.shields.io/github/v/release/cdklabs/cdk-ethereum-node?color=green)](https://github.com/cdklabs/cdk-ethereum-node/releases)
+[![npm:version](https://img.shields.io/npm/v/@cdklabs/cdk-ethereum-node?color=blue)](https://www.npmjs.com/package/@cdklabs/cdk-ethereum-node)
+[![PyPi:version](https://img.shields.io/pypi/v/cdklabs.cdk-ethereum-node?color=blue)](https://pypi.org/project/cdklabs.cdk-ethereum-node/)
+[![Maven:version](https://img.shields.io/maven-central/v/io.github.cdklabs/cdk-ethereum-node?color=blue&label=maven)](https://central.sonatype.dev/artifact/io.github.cdklabs/cdk-ethereum-node/0.0.61)
+[![NuGet:version](https://img.shields.io/nuget/v/Cdklabs.CdkEthereumNode?color=blue)](https://www.nuget.org/packages/Cdklabs.CdkEthereumNode)
+
 
 This repository contains a CDK construct to deploy an Ethereum node running
 on Amazon Managed Blockchain. The following networks are supported:
