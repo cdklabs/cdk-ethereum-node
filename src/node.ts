@@ -30,8 +30,9 @@ export enum InstanceType {
  */
 export enum Network {
   MAINNET = 'n-ethereum-mainnet',
+  GOERLI = 'n-ethereum-goerli',
+  RINKEBY = 'n-ethereum-rinkeby',
   ROPSTEN = 'n-ethereum-ropsten',
-  RINKEBY = 'n-ethereum-rinkeby'
 }
 
 /**

@@ -299,8 +299,9 @@ Supported Ethereum networks for Managed Blockchain nodes.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ethereum-node.Network.MAINNET">MAINNET</a></code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ethereum-node.Network.ROPSTEN">ROPSTEN</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ethereum-node.Network.GOERLI">GOERLI</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ethereum-node.Network.RINKEBY">RINKEBY</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ethereum-node.Network.ROPSTEN">ROPSTEN</a></code> | *No description.* |
 
 ---
 
@@ -309,12 +310,17 @@ Supported Ethereum networks for Managed Blockchain nodes.
 ---
 
 
-##### `ROPSTEN` <a name="ROPSTEN" id="@cdklabs/cdk-ethereum-node.Network.ROPSTEN"></a>
+##### `GOERLI` <a name="GOERLI" id="@cdklabs/cdk-ethereum-node.Network.GOERLI"></a>
 
 ---
 
 
 ##### `RINKEBY` <a name="RINKEBY" id="@cdklabs/cdk-ethereum-node.Network.RINKEBY"></a>
+
+---
+
+
+##### `ROPSTEN` <a name="ROPSTEN" id="@cdklabs/cdk-ethereum-node.Network.ROPSTEN"></a>
 
 ---
 
