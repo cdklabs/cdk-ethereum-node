@@ -12,10 +12,10 @@ This repository contains a CDK construct to deploy an Ethereum node running
 on Amazon Managed Blockchain. The following networks are supported:
 
 *  Mainnet (default)
-*  Testnet: Ropsten
+*  Testnet: Goerli
 *  Testnet: Rinkeby
+*  Testnet: Ropsten
 
-<!-- TODO: add a documentation note here about Goerli network -->
 
 
 ## Installation
