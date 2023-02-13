@@ -53,6 +53,11 @@ export interface EthereumNodeProps {
   readonly instanceType?: InstanceType;
 
   /**
+   * The Region in which the node will be created
+   */
+  readonly region?: string;
+
+  /**
      * The Availability Zone in which the node will be created
      * @default - us-east-1a
      */
@@ -86,6 +91,8 @@ export class EthereumNode extends constructs.Construct {
     super(scope, id);
 
     const region = cdk.Stack.of(this).region;
+    const availabilityZones = cdk.Stack.of(this).availabilityZones;
+    var regionInEnvironment = !cdk.Token.isUnresolved(region);
 
     /**
      * Builds out Ethereum node given a list of input property objects,
@@ -97,10 +104,15 @@ export class EthereumNode extends constructs.Construct {
     // will be populated with defaults when passed to the node constructor
     this.network = props.network ?? Network.MAINNET;
     this.instanceType = props.instanceType ?? InstanceType.BURSTABLE3_LARGE;
-    this.availabilityZone = props.availabilityZone ?? `${region}a`;
 
-    utilities.validateRegion(region);
-    utilities.validateAvailabilityZone(region, this.availabilityZone);
+    // If no availability zone is provided, use the first in the region.
+    if (regionInEnvironment) {
+      utilities.validateRegion(region);
+      this.availabilityZone = props.availabilityZone ?? `${region}a`;
+      utilities.validateAvailabilityZone(region, this.availabilityZone);
+    } else {
+      this.availabilityZone = props.availabilityZone ?? availabilityZones[0];
+    }
 
     /**
      * Build out CloudFormation resources populating with input values or defaults if none provided

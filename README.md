@@ -87,7 +87,7 @@ The following is a more complex instantiation illustrating some of the node conf
 
 ```typescript
 new EthereumNode(this, 'Example', {
-  network: NetworkId.ROPSTEN,
+  network: Network.ROPSTEN,
   availabilityZone: 'us-east-1b',
   instanceType: InstanceType.BURSTABLE3_LARGE,
 });
@@ -100,8 +100,6 @@ for (const i = 0; i < 10; i++) {
   new EthereumNode(this, `Example_${i}`);
 }
 ```
-> ``📝`` When you instantiate a stack in your CDK Application, make sure to include the correct environment configuration for CDK to compile correctly. For example, if you want to to specialize the stack for the AWS Account and Region that are implied by the current CLI configuration, use this line of code:  
-`env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },`
 
 See the [API Documentation](API.md) for details on all available input and output parameters.
 

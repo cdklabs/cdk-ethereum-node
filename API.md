@@ -161,6 +161,7 @@ const ethereumNodeProps: EthereumNodeProps = { ... }
 | <code><a href="#@cdklabs/cdk-ethereum-node.EthereumNodeProps.property.availabilityZone">availabilityZone</a></code> | <code>string</code> | The Availability Zone in which the node will be created. |
 | <code><a href="#@cdklabs/cdk-ethereum-node.EthereumNodeProps.property.instanceType">instanceType</a></code> | <code><a href="#@cdklabs/cdk-ethereum-node.InstanceType">InstanceType</a></code> | The Amazon Managed Blockchain instance type for the Ethereum node. |
 | <code><a href="#@cdklabs/cdk-ethereum-node.EthereumNodeProps.property.network">network</a></code> | <code><a href="#@cdklabs/cdk-ethereum-node.Network">Network</a></code> | The Ethereum Network in which the node will be created. |
+| <code><a href="#@cdklabs/cdk-ethereum-node.EthereumNodeProps.property.region">region</a></code> | <code>string</code> | The Region in which the node will be created. |
 
 ---
 
@@ -200,6 +201,18 @@ public readonly network: Network;
 - *Default:* The default network selected is Mainnet network
 
 The Ethereum Network in which the node will be created.
+
+---
+
+##### `region`<sup>Optional</sup> <a name="region" id="@cdklabs/cdk-ethereum-node.EthereumNodeProps.property.region"></a>
+
+```typescript
+public readonly region: string;
+```
+
+- *Type:* string
+
+The Region in which the node will be created.
 
 ---
 
