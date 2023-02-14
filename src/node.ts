@@ -53,11 +53,6 @@ export interface EthereumNodeProps {
   readonly instanceType?: InstanceType;
 
   /**
-   * The Region in which the node will be created
-   */
-  readonly region?: string;
-
-  /**
      * The Availability Zone in which the node will be created
      * @default - us-east-1a
      */
@@ -77,6 +72,11 @@ export class EthereumNode extends constructs.Construct {
      * The Amazon Managed Blockchain instance type for the node
      */
   readonly instanceType: InstanceType;
+
+  /**
+   * The Region in which the node exists
+   */
+  readonly region: string;
 
   /**
      * The Availability Zone in which the node exists
@@ -104,6 +104,7 @@ export class EthereumNode extends constructs.Construct {
     // will be populated with defaults when passed to the node constructor
     this.network = props.network ?? Network.MAINNET;
     this.instanceType = props.instanceType ?? InstanceType.BURSTABLE3_LARGE;
+    this.region = region;
 
     // If no availability zone is provided, use the first in the region.
     if (regionInEnvironment) {
@@ -126,5 +127,4 @@ export class EthereumNode extends constructs.Construct {
     });
 
   }
-
 }
