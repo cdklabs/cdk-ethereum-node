@@ -11,7 +11,6 @@ import * as utilities from './utilities';
  * Supported instance types for Managed Blockchain nodes
  */
 export enum InstanceType {
-  BURSTABLE3_SMALL = 'bc.t3.small',
   BURSTABLE3_MEDIUM = 'bc.t3.medium',
   BURSTABLE3_LARGE = 'bc.t3.large',
   BURSTABLE3_XLARGE = 'bc.t3.xlarge',
