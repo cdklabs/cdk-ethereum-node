@@ -93,14 +93,6 @@ new EthereumNode(this, 'Example', {
 });
 ```
 
-The following provides an example of how to leverage the construct to deploy more than one node at a time.
-
-```typescript
-for (const i = 0; i < 10; i++) {
-  new EthereumNode(this, `Example_${i}`);
-}
-```
-
 See the [API Documentation](API.md) for details on all available input and output parameters.
 
 
