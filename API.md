@@ -228,7 +228,6 @@ Supported instance types for Managed Blockchain nodes.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@cdklabs/cdk-ethereum-node.InstanceType.BURSTABLE3_SMALL">BURSTABLE3_SMALL</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ethereum-node.InstanceType.BURSTABLE3_MEDIUM">BURSTABLE3_MEDIUM</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ethereum-node.InstanceType.BURSTABLE3_LARGE">BURSTABLE3_LARGE</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ethereum-node.InstanceType.BURSTABLE3_XLARGE">BURSTABLE3_XLARGE</a></code> | *No description.* |
@@ -242,11 +241,6 @@ Supported instance types for Managed Blockchain nodes.
 | <code><a href="#@cdklabs/cdk-ethereum-node.InstanceType.COMPUTE5_XLARGE4">COMPUTE5_XLARGE4</a></code> | *No description.* |
 
 ---
-
-##### `BURSTABLE3_SMALL` <a name="BURSTABLE3_SMALL" id="@cdklabs/cdk-ethereum-node.InstanceType.BURSTABLE3_SMALL"></a>
-
----
-
 
 ##### `BURSTABLE3_MEDIUM` <a name="BURSTABLE3_MEDIUM" id="@cdklabs/cdk-ethereum-node.InstanceType.BURSTABLE3_MEDIUM"></a>
 
