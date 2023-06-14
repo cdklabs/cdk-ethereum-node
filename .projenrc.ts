@@ -1,12 +1,13 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
-const { awscdk } = require('projen');
+import { awscdk, javascript } from 'projen';
 
 const project = new awscdk.AwsCdkConstructLibrary({
   name: '@cdklabs/cdk-ethereum-node',
-  authorName: 'Amazon Web Services',
-  authorUrl: 'https://aws.amazon.com',
+  projenrcTs: true,
+  author: 'Amazon Web Services',
+  authorAddress: 'https://aws.amazon.com',
   description: 'CDK construct to deploy an Ethereum node running on Amazon Managed Blockchain',
   license: 'MIT-0',
   copyrightOwner: 'Amazon.com, Inc. or its affiliates. All Rights Reserved.',
@@ -30,7 +31,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
     '.gitattributes',
     '.jsii',
   ],
-  npmAccess: 'public',
+  npmAccess: javascript.NpmAccess.PUBLIC,
   publishToPypi: {
     distName: 'cdklabs.cdk-ethereum-node',
     module: 'cdklabs.cdk_ethereum_node',
