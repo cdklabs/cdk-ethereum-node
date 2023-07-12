@@ -81,6 +81,21 @@ export class EthereumNode extends constructs.Construct {
   readonly availabilityZone: string;
 
   /**
+   * The ID of the node
+   */
+  readonly nodeId: string;
+
+  /**
+   * The node's HTTP endpoint
+   */
+  readonly httpEndpoint: string;
+
+  /**
+   * The node's Web Socket endpoint
+   */
+  readonly webSocketEndpoint: string;
+
+  /**
    * Creates an Ethereum public network node on an Amazon Managed Blockchain network
   */
   constructor(scope: constructs.Construct, id: string, props?: EthereumNodeProps) {
@@ -115,7 +130,7 @@ export class EthereumNode extends constructs.Construct {
     /**
      * Build out CloudFormation resources populating with input values or defaults if none provided
      */
-    new managedblockchain.CfnNode(this, id, {
+    const cfnNode = new managedblockchain.CfnNode(this, id, {
       networkId: this.network,
       nodeConfiguration: {
         availabilityZone: this.availabilityZone,
@@ -123,5 +138,21 @@ export class EthereumNode extends constructs.Construct {
       },
     });
 
+    /**
+     * Set class properties using CfnNode
+     */
+
+    // Node ID
+
+    this.nodeId = cfnNode.attrNodeId;
+
+    // Node Endpoints
+
+    const httpEndpointPrefix = "https://";
+    const webSocketEndpointPrefix = "wss://";
+    const endpointSuffix = `.ethereum.managedblockchain.${this.region}.amazon.aws.com`;
+
+    this.httpEndpoint = `${httpEndpointPrefix}${this.nodeId}${endpointSuffix}`;
+    this.webSocketEndpoint = `${webSocketEndpointPrefix}${this.nodeId}.wss${endpointSuffix}`;
   }
 }
