@@ -148,8 +148,8 @@ export class EthereumNode extends constructs.Construct {
 
     // Node Endpoints
 
-    const httpEndpointPrefix = "https://";
-    const webSocketEndpointPrefix = "wss://";
+    const httpEndpointPrefix = 'https://';
+    const webSocketEndpointPrefix = 'wss://';
     const endpointSuffix = `.ethereum.managedblockchain.${this.region}.amazon.aws.com`;
 
     this.httpEndpoint = `${httpEndpointPrefix}${this.nodeId}${endpointSuffix}`;
