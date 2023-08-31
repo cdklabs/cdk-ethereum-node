@@ -20,13 +20,13 @@ describe('EthereumNode', () => {
       Properties: {
         NodeConfiguration: {
           AvailabilityZone: 'us-east-1a',
-          InstanceType: 'bc.t3.large',
+          InstanceType: 'bc.t3.xlarge',
         },
       },
     });
     expect(node.network).toBe(ethereum.Network.MAINNET);
     expect(node.availabilityZone).toBe('us-east-1a');
-    expect(node.instanceType).toBe(ethereum.InstanceType.BURSTABLE3_LARGE);
+    expect(node.instanceType).toBe(ethereum.InstanceType.BURSTABLE3_XLARGE);
   });
 
   test('Create an Ethereum node with a custom configuration', () => {
