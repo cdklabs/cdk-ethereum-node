@@ -97,7 +97,7 @@ export class EthereumNode extends constructs.Construct {
     // If no node configurations are provided, create one; the empty object
     // will be populated with defaults when passed to the node constructor
     this.network = props.network ?? Network.MAINNET;
-    this.instanceType = props.instanceType ?? InstanceType.BURSTABLE3_LARGE;
+    this.instanceType = props.instanceType ?? InstanceType.BURSTABLE3_XLARGE;
     this.region = region;
 
     // If no availability zone is provided, use the first in the region.
