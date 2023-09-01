@@ -20,13 +20,13 @@ describe('EthereumNode', () => {
       Properties: {
         NodeConfiguration: {
           AvailabilityZone: 'us-east-1a',
-          InstanceType: 'bc.t3.large',
+          InstanceType: 'bc.t3.xlarge',
         },
       },
     });
     expect(node.network).toBe(ethereum.Network.MAINNET);
     expect(node.availabilityZone).toBe('us-east-1a');
-    expect(node.instanceType).toBe(ethereum.InstanceType.BURSTABLE3_LARGE);
+    expect(node.instanceType).toBe(ethereum.InstanceType.BURSTABLE3_XLARGE);
   });
 
   test('Create an Ethereum node with a custom configuration', () => {
@@ -35,7 +35,7 @@ describe('EthereumNode', () => {
     const node = new ethereum.EthereumNode(stack, 'TestEthereumPublicNetwork', {
       network: ethereum.Network.MAINNET,
       availabilityZone: 'us-east-1b',
-      instanceType: ethereum.InstanceType.BURSTABLE3_LARGE,
+      instanceType: ethereum.InstanceType.BURSTABLE3_XLARGE,
     });
     const template = assertions.Template.fromStack(stack);
     template.resourceCountIs('AWS::ManagedBlockchain::Node', 1);
@@ -43,13 +43,13 @@ describe('EthereumNode', () => {
       Properties: {
         NodeConfiguration: {
           AvailabilityZone: 'us-east-1b',
-          InstanceType: 'bc.t3.large',
+          InstanceType: 'bc.t3.xlarge',
         },
       },
     });
     expect(node.network).toBe(ethereum.Network.MAINNET);
     expect(node.availabilityZone).toBe('us-east-1b');
-    expect(node.instanceType).toBe(ethereum.InstanceType.BURSTABLE3_LARGE);
+    expect(node.instanceType).toBe(ethereum.InstanceType.BURSTABLE3_XLARGE);
   });
 
   test('Fail to create a node in an invalid availability zone', () => {
