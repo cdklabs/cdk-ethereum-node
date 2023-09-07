@@ -354,29 +354,16 @@ Supported instance types for Managed Blockchain nodes.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@cdklabs/cdk-ethereum-node.InstanceType.BURSTABLE3_LARGE">BURSTABLE3_LARGE</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ethereum-node.InstanceType.BURSTABLE3_XLARGE">BURSTABLE3_XLARGE</a></code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ethereum-node.InstanceType.STANDARD5_LARGE">STANDARD5_LARGE</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ethereum-node.InstanceType.STANDARD5_XLARGE">STANDARD5_XLARGE</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ethereum-node.InstanceType.STANDARD5_XLARGE2">STANDARD5_XLARGE2</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ethereum-node.InstanceType.STANDARD5_XLARGE4">STANDARD5_XLARGE4</a></code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ethereum-node.InstanceType.COMPUTE5_XLARGE">COMPUTE5_XLARGE</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ethereum-node.InstanceType.COMPUTE5_XLARGE2">COMPUTE5_XLARGE2</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ethereum-node.InstanceType.COMPUTE5_XLARGE4">COMPUTE5_XLARGE4</a></code> | *No description.* |
 
 ---
 
-##### `BURSTABLE3_LARGE` <a name="BURSTABLE3_LARGE" id="@cdklabs/cdk-ethereum-node.InstanceType.BURSTABLE3_LARGE"></a>
-
----
-
-
 ##### `BURSTABLE3_XLARGE` <a name="BURSTABLE3_XLARGE" id="@cdklabs/cdk-ethereum-node.InstanceType.BURSTABLE3_XLARGE"></a>
-
----
-
-
-##### `STANDARD5_LARGE` <a name="STANDARD5_LARGE" id="@cdklabs/cdk-ethereum-node.InstanceType.STANDARD5_LARGE"></a>
 
 ---
 
@@ -392,11 +379,6 @@ Supported instance types for Managed Blockchain nodes.
 
 
 ##### `STANDARD5_XLARGE4` <a name="STANDARD5_XLARGE4" id="@cdklabs/cdk-ethereum-node.InstanceType.STANDARD5_XLARGE4"></a>
-
----
-
-
-##### `COMPUTE5_XLARGE` <a name="COMPUTE5_XLARGE" id="@cdklabs/cdk-ethereum-node.InstanceType.COMPUTE5_XLARGE"></a>
 
 ---
 

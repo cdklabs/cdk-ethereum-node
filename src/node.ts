@@ -11,13 +11,10 @@ import * as utilities from './utilities';
  * Supported instance types for Managed Blockchain nodes
  */
 export enum InstanceType {
-  BURSTABLE3_LARGE = 'bc.t3.large',
   BURSTABLE3_XLARGE = 'bc.t3.xlarge',
-  STANDARD5_LARGE = 'bc.m5.large',
   STANDARD5_XLARGE = 'bc.m5.xlarge',
   STANDARD5_XLARGE2 = 'bc.m5.2xlarge',
   STANDARD5_XLARGE4 = 'bc.m5.4xlarge',
-  COMPUTE5_XLARGE = 'bc.c5.xlarge',
   COMPUTE5_XLARGE2 = 'bc.c5.2xlarge',
   COMPUTE5_XLARGE4 = 'bc.c5.4xlarge',
 }
@@ -115,7 +112,7 @@ export class EthereumNode extends constructs.Construct {
     // If no node configurations are provided, create one; the empty object
     // will be populated with defaults when passed to the node constructor
     this.network = props.network ?? Network.MAINNET;
-    this.instanceType = props.instanceType ?? InstanceType.BURSTABLE3_LARGE;
+    this.instanceType = props.instanceType ?? InstanceType.BURSTABLE3_XLARGE;
     this.region = region;
 
     // If no availability zone is provided, use the first in the region.
