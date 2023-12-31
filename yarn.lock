@@ -815,16 +815,16 @@
   integrity sha512-hov8bUuiLiyFPGyFPE1lwWhmzYbirOXQNNo40+y3zow8aFVTeyn3VWL0VFFfdNddA8S4Vf0Tc062rzyNr7Paag==
 
 "@types/node@*":
-  version "20.10.5"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.10.5.tgz#47ad460b514096b7ed63a1dae26fad0914ed3ab2"
-  integrity sha512-nNPsNE65wjMxEKI93yOP+NPGGBJz/PoN3kZsVLee0XMiJolxSekEVD8wRwBUBqkwc7UWop0edW50yrCQW4CyRw==
+  version "20.10.6"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.10.6.tgz#a3ec84c22965802bf763da55b2394424f22bfbb5"
+  integrity sha512-Vac8H+NlRNNlAmDfGUP7b5h/KA+AtWIzuXy0E6OyP8f1tCLYAtPvKRRDJjAPqhpCb0t6U2j7/xqAuLEebW2kiw==
   dependencies:
     undici-types "~5.26.4"
 
 "@types/node@^16":
-  version "16.18.68"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.18.68.tgz#3155f64a961b3d8d10246c80657f9a7292e3421a"
-  integrity sha512-sG3hPIQwJLoewrN7cr0dwEy+yF5nD4D/4FxtQpFciRD/xwUzgD+G05uxZHv5mhfXo4F9Jkp13jjn0CC2q325sg==
+  version "16.18.69"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.18.69.tgz#84853c5562baeabc6e864e36ea106f8c09495b24"
+  integrity sha512-AfDKv5fWd9XStaEuqFa6PYcM8FgTqxVMsP4BPk60emeB9YX+pp2P0zZ8nU1BQg8hyPGFrMt7MGMRMis8IrcPyg==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.4"
@@ -1366,10 +1366,10 @@ case@1.6.3, case@^1.6.3:
   resolved "https://registry.yarnpkg.com/case/-/case-1.6.3.tgz#0a4386e3e9825351ca2e6216c60467ff5f1ea1c9"
   integrity sha512-mzDSXIPaFwVDvZAHqZ9VlbyF4yyXRuX6IvB06WvPYkqJVO24kX1PPhv9bfpKNFZyxYFmmgo03HUiD8iklmJYRQ==
 
-cdk-nag@^2.27.225:
-  version "2.27.225"
-  resolved "https://registry.yarnpkg.com/cdk-nag/-/cdk-nag-2.27.225.tgz#d340b7bb7f2193cdd74a6456e5fc0c7abc5a72d3"
-  integrity sha512-csfgsrQ0oBaZFlVe9sRDLqqOmUJf27ZP3G306bl8KdlRL+ZxmHewoLmPyDP0q2Ezrl6nheK43VI3HN7Npo5+xA==
+cdk-nag@^2.27.226:
+  version "2.27.226"
+  resolved "https://registry.yarnpkg.com/cdk-nag/-/cdk-nag-2.27.226.tgz#74c976273fc7e507a350a83aea23a315533c220f"
+  integrity sha512-GqCdIQA++EiyGGJKjVRDKdI/OM5JywXru03yKq3kCQfeT78h1jJKRG3wxjL+LTEqoSdSNvvVn6NrdNLNXsFwtQ==
 
 chalk@^2.4.2:
   version "2.4.2"
