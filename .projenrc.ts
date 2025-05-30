@@ -38,7 +38,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   },
   publishToMaven: {
     javaPackage: 'io.github.cdklabs.cdkethereumnode',
-    mavenEndpoint: 'https://s01.oss.sonatype.org',
+    mavenServerId: 'central-ossrh',
     mavenArtifactId: 'cdk-ethereum-node',
     mavenGroupId: 'io.github.cdklabs',
   },
